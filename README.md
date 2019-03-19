@@ -1,8 +1,6 @@
 # python-file-downloader
 A Script for bulk downloading files
 
-Youtube video associated with this project: https://www.youtube.com/watch?v=gLltJxZy5r8
-
 This is a very simple script download files from a website. 
 
 Requirements: 
