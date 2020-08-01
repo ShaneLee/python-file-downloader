@@ -1,18 +1,19 @@
+#!/usr/bin/env python3
+
 from bs4 import BeautifulSoup
 import requests
 from requests import get
 
-page = requests.get(raw_input("Enter URL: "))
-filetype = '.' + raw_input("Enter File Extension (with no dot):")
-html = page.text
-soup = BeautifulSoup(html, "html.parser")
+page = requests.get(input('Enter URL: '))
+filetype = '.' + input('Enter File Extension (with no dot): ')
+soup = BeautifulSoup(page.text, 'html.parser')
 
 for link in soup.find_all('a'):
     url = link.get('href')
     if filetype in url:
         print(url)
-        with open(url, "wb") as file:
-            response = get(domain + url)
+        with open(url, 'wb') as file:
+            response = get(url)
             file.write(response.content)
     else:
         continue
